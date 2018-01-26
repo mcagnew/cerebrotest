@@ -153,12 +153,10 @@ For a quick way to start using this dataset, click on the **Get Started** button
 In the UI **Datasets with Errors** are those that failed to load due to a problem with their metdata (e.g unsupported datatype). Datasets with errors will always be at the bottom of your datasets list. You can use the filter on top of the datasets lists to view **only** Datasets with Errors. Clicking on a dataset with an error will reveal the error message on the details page on the right. 
 
 <!--TD review this to check wording on disclaimer--> 
->:heavy_exclamation_mark: There may still be failing datasets in the Cerebro deployment that the UI doesn't detect as having errors, due to the errors being for other reasons than problems with metadata (e.g create view statement)
+>:heavy_exclamation_mark:There may still be failing datasets in the Cerebro deployment that the UI doesn't detect as having errors, due to the errors being for other reasons than problems with metadata (e.g create view statement)
 
 ## Admin Features
 Within the Cerebro UI, you have access to Admin features if **you have ALL access on a particular object (database or dataset)**.
-
-<!--TK Content list admin featuers here-->
 
 ### Review Group Access on Datasets
 
@@ -170,14 +168,14 @@ If there are *ANY* databases or datasets to which you have all access, you will 
 
 When you click **Admin**, You will see a multi-select box under **Review Access** where you can select a group or set of groups to see which datasets those groups have access to. 
 
-  > :heavy_exclamation_mark: Only groups with some level of access to your datasets will be shown in this multi-select; any group not in the available list has no access to any of the datasets that are visible.
+  >:heavy_exclamation_mark:Only groups with some level of access to your datasets will be shown in this multi-select; any group not in the available list has no access to any of the datasets that are visible.
 - A column is added to every dataset showing whether the group or groups being inspected can access any field in the dataset. 
   - ![Cerebro lock icon.png][lock] - Selected Group, or set of groups, has no access to this dataset
   - ![Cerebro check icon.png][check] - Selected Group, or set of groups, has *some level of access* to this dataset
   
   *Note that access is treated as a logical OR of the groups' individual access--if any of the selected groups have access to a dataset, you will see a checkmark for that group.*
 
-### Review Group Access on Dataset Schema - ADMIN ONLY
+### Review Group Access on Dataset Schema
 If you have all access to a particular dataset, you will also see an 'Access' tab where you can inspect which groups have access to which fields in the dataset.(A similar experience to the dataset page) You will see:
 
 ![Cerebro Datasets Details Page.png][review-schema]
@@ -185,7 +183,7 @@ If you have all access to a particular dataset, you will also see an 'Access' ta
 <!--TK image of compare access-->
 
 - A **multi-select box** where you can select a group or set of groups to see which fields in the dataset those groups have access to. Like the Review dataset access view, only groups with some level of access to the dataset will be shown in this multi-select. 
-  **:heavy_exclamation_mark: Note: Any group not shown has no access to this dataset.**
+  **:heavy_exclamation_mark:Any group not shown has no access to this dataset.**
 - **checkmark** or **lock** icons indicating whether the currently selected groups
 have access to the field or not. 
   - ![Cerebro lock icon.png][lock] - Group has no access to this field
@@ -197,7 +195,7 @@ Additionally, the access tab lets you compare two different sets of groups' acce
 ### Logging Out 
 To logout, click your username in the upper right part of the screen, then click "Logout".
 
->:heavy_exclamation_mark: Your credentials are saved in the browser until either your token expires, or you explicitly log out. Be aware of this when sharing access to your computer.
+>:heavy_exclamation_mark:Your credentials are saved in the browser until either your token expires, or you explicitly log out. Be aware of this when sharing access to your computer.
 
 ### Troubleshooting
 The Cerebro team really value your feedback. If you experience a problem with a particular aspect of the Web UI, or notice that features do not work as described or expected, please take a screenshot or video capture.
