@@ -1,18 +1,16 @@
 <!-- UI Docs draft. 
-- Update images once 0.8 is finalized
-- TD - Todo, please review  
-- TK are parts that still need to be done --> 
+- TK - Images to be updated once 0.8 UI is finalized
+- TD - Please Review --> 
 
 # Cerebro Web UI
-<!--TK Do last-->
-The Cerebro Web UI provides a **read only** user interface to: view your account information, find and understand datasets, understand your access to datasets and columns and inspect group permissions on any dataset for which you are an admin (you have all privileges).
+The Cerebro Web UI provides a **read only** user interface to: view your account information, find and understand datasets, understand your access to datasets and columns, and inspect group permissions on any dataset for which you are an admin (you have all privileges).
 
 - [Accessing the UI](#accessing-the-ui)
 - [Supported Browsers](#supported-browsers)
-- [Loggin in](#logging-in)
+- [Logging in](#logging-in)
 - [Account Details](#account-details)
 - [About Dialog](#about-dialog)
-- [Copy your token](#copying-your-access-token )
+- [Copying your token](#copying-your-access-token)
 - [Datasets Page](#datasets-page)
   - [Searching and Filtering](#searching-and-filtering-datasets)
   - [Dataset details](#dataset-details)
@@ -21,7 +19,7 @@ The Cerebro Web UI provides a **read only** user interface to: view your account
 - [Datasets with Errors](#datasets-with-errors)
 - [Admin Features](#admin-features)
   -  [Review Group Access on Datasets](#review-group-access-on-datasets)
-  -  [Review Group Access on a Dataset schema](#review-group-access-on-a-dataset-schema)
+  -  [Review Group Access on a Dataset Schema](#review-group-access-on-a-dataset-schema)
 - [Troubleshooting](#troubleshooting)
 
 ## Accessing the UI
@@ -30,19 +28,19 @@ To access the Web UI, first set up a Cerebro cluster. Once the cluster is set up
 ## Supported Browsers
 The Cerebro UI is supported on the following browsers:
 
-<!--TK Mike and Marshall to fill out
+<!-- TD Mike and Marshall to fill out
 Windows: Chrome, Firefox 17+, Internet Explorer Edge+, Safari 5+
 Linux: Chrome, Firefox 17+
-Mac: Chrome, Firefox 17+, Safari 5+-->
+Mac: Chrome, Firefox 17+, Safari 5+ -->
 
 ## Logging in 
 You will see a login screen that can be configured to provide various login options depending on your cluster configuration, including:
-- **Cerebro token login**: this option is always available for log in as long as the user can get a Cerebro token. <!--TK JWT, SSO tokens are accepted, should we update to reflect this-->
+- **Cerebro token login**: this option is always available for log in as long as the user can get a Cerebro token.
+<!-- TD Other tokens besides Cerebro are accepted (JWT, SSO) should we update to reflect this? -->
 - **username/password login**: if the cluster is configured to authenticate with LDAP, username and password login is available
 - **OAuth login**: OAuth login is available if the cluster is configured for it and there is an auth server set up to handle it.
 
 ## Using the UI 
-<!--In general, the Web UI provides **read-only** browsing of your Cerebro environment. The Cerebro UI helps you find and understand datasets, and quickly start using them in the application of your choice, understand your access to datasets and columns, and offers [Admin features](#) to review and debug access on datasets and schemas.-->
 
 ### Account Details 
 
@@ -57,7 +55,7 @@ After you login, you will land on the **Home Page**. From this page, you can see
 ![Cerebro Account Details][accountdetails]
 
 ### About Dialog 
-You fill find the **About** dialog in the top right hand corner of the navigation next to your username. Clicking on it will bring up some handy info for diagnostics as well as the REST API and Planner endpoints. 
+You will find the **About** dialog in the top right hand corner of the navigation next to your username. Clicking on it will bring up some handy info for diagnostics as well as the REST API and Planner endpoints. 
 - UI Version
 - Build Hash
 - Planner Version 
@@ -65,16 +63,16 @@ You fill find the **About** dialog in the top right hand corner of the navigatio
 - REST API Endpoint
 - Authentication Methods Available
 
-
 ### Copying your Access token 
+
 **Home Page**
 
-![cerebro home page-copy token.png][token-home]
+![Cerebro Home Page][token-home]
 
 **Quick Access Menu option** 
 Click your username in the top left > 'Copy Access Token'
 
-![cerebro menu-copy token.png][token-menu]
+![Cerebro Copy Token in Menu][token-menu]
 
 ### Datasets Page
 
@@ -88,18 +86,18 @@ The Datasets page allows you to browse, search for, filter, and preview the data
 
 ### Searching and Filtering Datasets
 
-<!--TK Insert Image-->
+<!-- TK Insert Image of datasets search + filter -->
 
-At the top of the page contains search and filter options for the list of datasets, including:
+At the top of the page contains search and filter options for the list of datasets, including a:
 
-- **A search box** where you can search by dataset name. Any dataset whose name contains your input as a substring will be shown. 
+- **Search box** where you can search by dataset name. Any dataset whose name contains your input as a substring will be shown. 
 *Tip: You can quickly clear this box with the ESC key.*
-- **A 'Filter by database' multi-select box** that allows you to filter the list to only datasets in a particular database or set of databases. 
+- **'Filter by database' multi-select box** that allows you to filter the list to only datasets in a particular database or set of databases. 
 
 ### Dataset Details
-Clicking on a dataset card in the dataset list will show that dataset's details page on the right.
+Clicking on a dataset card in the datasets list will display that dataset's details page on the right hand side.
 
-![Cerebro Datasets Details Page - Regular + highlight.png][dataset-details]
+![Cerebro Datasets Details Page][dataset-details]
 
 This page contains:
   - The dataset's **metadata**, including
@@ -110,28 +108,29 @@ This page contains:
     - Description
     - Created - Date and time the dataset was created  
     - Metadata Changed - Date and time the metadata was last changed
+    - View Definition (if dataset is an external view)
   - The dataset schema described in full
     - Total number of columns in the schema (next to 'Schema' tab)
     - Each column in the dataset is shown, including
-      - Name
-      - Type
-      - Access (whether you have read-access to view the cells in this column)
+     - Name
+     - Type
+     - Access (whether you have read-access to view the cells in this column)
     - If a column's name has a gray background, it is a **partitioning column**
-    - ![Cerebro paritioning field.png][partioning-field]
+    - ![Cerebro paritioning field][partioning-field]
       
 ### If you do not have access to a column
 You may notice that your schema looks like below. This means that you do not have access to every column in the schema 
 
-![Cerebro See Groups.png][schema-access]
+![Cerebro See Groups][schema-access]
 
 **To see which groups have access to that column**
 - Click "See Groups" in the row
-- You will see a list of groups; your account will need to be added to at least one of these groups to gain access to the column
+- You will see a list of groups; you will need to be added to at least one of these groups to gain access to the column
 
 ### Dataset preview
-To preview the data in a dataset, click on the **Show Preview** button in the upper right part of the details page. 
+To preview a dataset, click on the **Show Preview** button in the upper right part of the details page. 
 
-![Cerebro Preview Dataset.png][preview]
+![Cerebro Preview Dataset][preview]
 
 - No more than 200 rows will be shown (to view more, see "Dataset usage" below)
 - You will not see information for columns for which you have no access
@@ -140,54 +139,55 @@ To preview the data in a dataset, click on the **Show Preview** button in the up
 ### Get Started snippets
 For a quick way to start using this dataset, click on the **Get Started** button in the upper right part of the details page.
 
-![Cerebro Get Started.png][get-started]
+![Cerebro Get Started snippets][get-started]
 
-<!--TK Check with Mike this is working-->
+<!-- TD Check with Mike these snippets are working -->
 
    - Sections of different sample code will be shown (Spark, Hive, Python, R and CURL)
-   - Click on the tab of your choice and copy/paste the code into the application or associated
-     environment of your choice to start using this dataset
+   - Click on the tab of your choice and copy/paste the code into the application of your choice to start using this dataset
 
 ### Datasets with Errors 
-<!--TK Image of Datasets with Errors image showing filter + error message highlighted-->
-In the UI **Datasets with Errors** are those that failed to load due to a problem with their metdata (e.g unsupported datatype). Datasets with errors will always be at the bottom of your datasets list. You can use the filter on top of the datasets lists to view **only** Datasets with Errors. Clicking on a dataset with an error will reveal the error message on the details page on the right. 
+<!-- TK Image of Datasets with Errors image showing filter + error message highlighted -->
+In the UI **Datasets with errors** are those that failed to load due to a problem with their metdata (e.g unsupported datatype). Datasets with errors will always be at the bottom of your datasets list. You can use the filter on top of the datasets list to view **only** Datasets with Errors. Clicking on a dataset with an error will reveal the error message on the details page on the right. 
 
-<!--TD review this to check wording on disclaimer--> 
->:heavy_exclamation_mark:There may still be failing datasets in the Cerebro deployment that the UI doesn't detect as having errors, due to the errors being for other reasons than problems with metadata (e.g create view statement)
+<!-- TD review this to check wording on disclaimer --> 
+>:heavy_exclamation_mark:There may still be failing datasets in the Cerebro deployment that the UI does not detect as having errors, due to the errors being for other reasons than problems with metadata (e.g create view statement).
 
 ## Admin Features
 Within the Cerebro UI, you have access to Admin features if **you have ALL access on a particular object (database or dataset)**.
 
 ### Review Group Access on Datasets
 
-If there are *ANY* databases or datasets to which you have all access, you will see an **Admin** Tab on the datasets page. This will: 
+If there are *ANY* databases or datasets to which you have all access, you will see an **Admin** Tab on the datasets page. 
+
+This will: 
 - Filter the datasets list to only datasets that you have all access on
-- Show "Review Access" feature for datasets that you have Admin Access
+- Reveal the **"Review Access"** feature for datasets that you have Admin Access
 
 <!-- TK IMAGE of review access--> 
 
-When you click **Admin**, You will see a multi-select box under **Review Access** where you can select a group or set of groups to see which datasets those groups have access to. 
+When you click **Admin**, you will see a multi-select box under **Review Access** where you can select a group or set of groups to see which datasets those groups have access to. You can also filter by database to review group access to datasets **only** inside that database.
 
-  >:heavy_exclamation_mark:Only groups with some level of access to your datasets will be shown in this multi-select; any group not in the available list has no access to any of the datasets that are visible.
+  >:heavy_exclamation_mark:Only groups with some level of access to the datasets you are admin on will be shown in this multi-select; any group not in the available list has no access to any of the datasets that are visible.
 - A column is added to every dataset showing whether the group or groups being inspected can access any field in the dataset. 
-  - ![Cerebro lock icon.png][lock] - Selected Group, or set of groups, has no access to this dataset
-  - ![Cerebro check icon.png][check] - Selected Group, or set of groups, has *some level of access* to this dataset
+  - ![Cerebro lock icon][lock] - Selected Group, or set of groups, has no access to this dataset
+  - ![Cerebro check icon][check] - Selected Group, or set of groups, has *some level of access* to this dataset
   
   *Note that access is treated as a logical OR of the groups' individual access--if any of the selected groups have access to a dataset, you will see a checkmark for that group.*
 
 ### Review Group Access on Dataset Schema
-If you have all access to a particular dataset, you will also see an 'Access' tab where you can inspect which groups have access to which fields in the dataset.(A similar experience to the dataset page) You will see:
+If you have all access to a particular dataset, you will also see an 'Access' tab on the dataset details page where you can inspect which groups have access to which fields in the dataset (A similar experience to the dataset page). You will see:
 
-![Cerebro Datasets Details Page.png][review-schema]
+![Cerebro Datasets Details Page][review-schema]
 
-<!--TK image of compare access-->
+<!-- TK image of compare access -->
 
-- A **multi-select box** where you can select a group or set of groups to see which fields in the dataset those groups have access to. Like the Review dataset access view, only groups with some level of access to the dataset will be shown in this multi-select. 
-  **:heavy_exclamation_mark:Any group not shown has no access to this dataset.**
+- A **multi-select box** where you can select a group or set of groups to see which fields in that dataset those groups have access to. Like the Reviewing access on the datasets page, only groups with some level of access to the dataset will be shown in this multi-select.
+>:heavy_exclamation_mark:Any group not shown has no access to this dataset.
 - **checkmark** or **lock** icons indicating whether the currently selected groups
 have access to the field or not. 
-  - ![Cerebro lock icon.png][lock] - Group has no access to this field
-  - ![Cerebro check icon.png][check]- Group has *some level of access* (Select or ALL) to this field. 
+  - ![Cerebro Lock icon][lock] - Selected Group or groups has no access to this field
+  - ![Cerebro check icon][check]- Selected Group or groups has *some level of access* (Select or ALL) to this field. 
 
 Additionally, the access tab lets you compare two different sets of groups' access at the same time by selecting different sets of groups in the two different access columns.
 <!-- TK image of comparing access on schemas --> 
@@ -198,7 +198,7 @@ To logout, click your username in the upper right part of the screen, then click
 >:heavy_exclamation_mark:Your credentials are saved in the browser until either your token expires, or you explicitly log out. Be aware of this when sharing access to your computer.
 
 ### Troubleshooting
-The Cerebro team really value your feedback. If you experience a problem with a particular aspect of the Web UI, or notice that features do not work as described or expected, please take a screenshot or video capture.
+The Cerebro team really values your feedback. If you experience a problem with a particular aspect of the Web UI, or notice that features do not work as described or expected, please take a screenshot or video capture.
 
 If possible, click the "About" link in the upper right part of the page and take note (e.g. another screenshot) of the details in the dialog that pops up. These version numbers will help to diagnose and fix issues that arise.
 
