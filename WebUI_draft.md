@@ -208,7 +208,7 @@ If possible, click the "About" link in the upper right part of the page and take
 [token-menu]: resources/FE79DD2E0FE4901DA2C5E7A34B1C66BA.png
 [token-menu]: resources/FE79DD2E0FE4901DA2C5E7A34B1C66BA.png
 [dataset-details]: resources/6518533AA6A7DD1767FEA685E56ABF28.png
-[partioning-field]: resources/C7C78B02F6E027B8F69C4C2BC17BEB03.png
+[partioning-field]: resources/C7C78B02F6E027B8F69C4C2BC17BEB04.png
 [schema-access]: resources/867E30D8DBBBF1095B3C5A9808D68482.png
 [preview]: resources/5DB6CC99DA0D20DEAF9C7CAB895D7868.png
 [get-started]: resources/03CC8BB78247AEEAB3968F71EE7FD8C1.png
